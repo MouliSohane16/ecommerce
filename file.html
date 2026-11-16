@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Learn With Mouli | Learn Smarter. Grow Faster.</title>
+
+  <style>
+    /* =========================
+       GLOBAL
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f7f8ff;
+      color: #15162b;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --blue: #4f46e5;
+      --purple: #7c3aed;
+      --cyan: #06b6d4;
+      --pink: #ec4899;
+      --green: #10b981;
+      --dark: #111329;
+      --gray: #6b7280;
+      --light: #f7f8ff;
+      --white: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid #e9e9f3;
+    }
+
+    .nav-container {
+      height: 75px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 13px;
+
+      color: white;
+
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple)
+      );
+
+      box-shadow: 0 8px 25px rgba(79,70,229,0.35);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #55586c;
+      font-size: 14px;
+      font-weight: 600;
+
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-button {
+      padding: 11px 20px;
+
+      color: white;
+
+      border-radius: 10px;
+
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple)
+      );
+
+      font-weight: 700;
+
+      box-shadow: 0 8px 20px rgba(79,70,229,0.25);
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      padding-top: 150px;
+      padding-bottom: 100px;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(124,58,237,0.14),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 10% 40%,
+          rgba(6,182,212,0.12),
+          transparent 30%
+        );
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: 1.1fr .9fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding: 8px 15px;
+
+      border-radius: 30px;
+
+      color: var(--blue);
+
+      background: #eeeeff;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin-top: 20px;
+
+      font-size: clamp(45px,6vw,72px);
+
+      line-height: 1.05;
+
+      letter-spacing: -3px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple),
+        var(--pink)
+      );
+
+      color: transparent;
+
+      background-clip: text;
+    }
+
+    .hero p {
+      margin-top: 25px;
+
+      max-width: 600px;
+
+      color: var(--gray);
+
+      font-size: 18px;
+
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      gap: 15px;
+
+      margin-top: 30px;
+    }
+
+    .primary-btn {
+      padding: 14px 22px;
+
+      border-radius: 12px;
+
+      color: white;
+
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple)
+      );
+
+      font-weight: 700;
+
+      box-shadow: 0 10px 25px rgba(79,70,229,.3);
+
+      transition: .3s;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .secondary-btn {
+      padding: 14px 22px;
+
+      border-radius: 12px;
+
+      background: white;
+
+      border: 1px solid #dddff0;
+
+      color: #55586c;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       TECH HERO VISUAL
+    ========================== */
+
+    .tech-visual {
+      position: relative;
+
+      min-height: 450px;
+    }
+
+    .glow {
+      position: absolute;
+
+      width: 320px;
+      height: 320px;
+
+      border-radius: 50%;
+
+      background: linear-gradient(
+        135deg,
+        #6366f1,
+        #a855f7
+      );
+
+      filter: blur(70px);
+
+      opacity: .35;
+
+      top: 50px;
+      right: 50px;
+    }
+
+    .code-window {
+      position: absolute;
+
+      width: 390px;
+
+      right: 20px;
+      top: 70px;
+
+      padding: 20px;
+
+      border-radius: 20px;
+
+      color: #e5e7eb;
+
+      background: #15172d;
+
+      box-shadow:
+        0 30px 70px rgba(20,20,60,.3);
+
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .window-top {
+      display: flex;
+      gap: 7px;
+
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+    }
+
+    .red { background: #ff5f56; }
+    .yellow { background: #ffbd2e; }
+    .green { background: #27c93f; }
+
+    .code {
+      font-family: monospace;
+
+      font-size: 14px;
+
+      line-height: 2;
+    }
+
+    .purple-code {
+      color: #c084fc;
+    }
+
+    .blue-code {
+      color: #67e8f9;
+    }
+
+    .green-code {
+      color: #86efac;
+    }
+
+    .floating-card {
+      position: absolute;
+
+      padding: 16px;
+
+      background: white;
+
+      border-radius: 16px;
+
+      box-shadow: 0 15px 40px rgba(20,20,60,.15);
+    }
+
+    .xp-card {
+      left: 0;
+      bottom: 80px;
+    }
+
+    .streak-card {
+      right: -10px;
+      bottom: 10px;
+    }
+
+    .floating-card strong {
+      font-size: 20px;
+    }
+
+    .floating-card small {
+      display: block;
+
+      color: var(--gray);
+
+      margin-top: 5px;
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+
+    /* =========================
+       SEARCH
+    ========================== */
+
+    .search-box {
+      margin-top: 30px;
+
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+
+      padding: 18px 22px;
+
+      border: 1px solid #dddff0;
+
+      border-radius: 15px;
+
+      background: white;
+
+      outline: none;
+
+      font-size: 15px;
+
+      box-shadow: 0 10px 30px rgba(30,30,80,.06);
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+
+      letter-spacing: -1px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+
+      margin-top: 10px;
+    }
+
+
+    /* =========================
+       COURSES
+    ========================== */
+
+    .course-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 20px;
+    }
+
+    .course-card {
+      background: white;
+
+      border: 1px solid #e8e9f2;
+
+      border-radius: 20px;
+
+      padding: 20px;
+
+      transition: .3s;
+
+      box-shadow: 0 10px 30px rgba(30,30,80,.05);
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 20px 50px rgba(30,30,80,.12);
+    }
+
+    .course-icon {
+      width: 55px;
+      height: 55px;
+
+      border-radius: 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 23px;
+
+      color: white;
+
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple)
+      );
+    }
+
+    .course-card h3 {
+      margin-top: 18px;
+    }
+
+    .course-card p {
+      color: var(--gray);
+
+      font-size: 13px;
+
+      margin-top: 8px;
+    }
+
+    .course-progress {
+      margin-top: 18px;
+
+      height: 7px;
+
+      background: #eeeeF5;
+
+      border-radius: 10px;
+
+      overflow: hidden;
+    }
+
+    .course-progress span {
+      display: block;
+
+      height: 100%;
+
+      width: 65%;
+
+      background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple)
+      );
+    }
+
+    .course-button {
+      width: 100%;
+
+      margin-top: 15px;
+
+      padding: 10px;
+
+      border-radius: 10px;
+
+      color: var(--blue);
+
+      background: #eeeeff;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       FUN TECH SECTION
+    ========================== */
+
+    .tech-section {
+      background: #111329;
+
+      color: white;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .tech-section::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      background: #4f46e5;
+
+      border-radius: 50%;
+
+      filter: blur(140px);
+
+      opacity: .25;
+
+      right: -150px;
+      top: -200px;
+    }
+
+    .tech-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 20px;
+    }
+
+    .tech-card {
+      padding: 25px;
+
+      border-radius: 20px;
+
+      background: rgba(255,255,255,.06);
+
+      border: 1px solid rgba(255,255,255,.1);
+
+      transition: .3s;
+    }
+
+    .tech-card:hover {
+      background: rgba(255,255,255,.1);
+
+      transform: translateY(-5px);
+    }
+
+    .tech-card-icon {
+      font-size: 35px;
+
+      margin-bottom: 15px;
+    }
+
+    .tech-card p {
+      color: #aeb1c5;
+
+      margin-top: 8px;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       STATS
+    ========================== */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 20px;
+    }
+
+    .stat {
+      background: white;
+
+      padding: 25px;
+
+      border-radius: 18px;
+
+      text-align: center;
+
+      border: 1px solid #e8e9f2;
+    }
+
+    .stat h3 {
+      font-size: 34px;
+
+      color: var(--blue);
+    }
+
+    .stat p {
+      color: var(--gray);
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       QUIZ
+    ========================== */
+
+    .quiz-box {
+      max-width: 800px;
+
+      margin: auto;
+
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 22px;
+
+      box-shadow: 0 20px 50px rgba(30,30,80,.1);
+    }
+
+    .quiz-question {
+      font-size: 23px;
+
+      margin: 20px 0;
+    }
+
+    .quiz-option {
+      width: 100%;
+
+      padding: 15px;
+
+      margin-top: 10px;
+
+      border: 1px solid #dddff0;
+
+      background: white;
+
+      border-radius: 12px;
+
+      text-align: left;
+
+      transition: .2s;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--blue);
+
+      background: #f1f1ff;
+    }
+
+    .quiz-result {
+      margin-top: 20px;
+
+      font-weight: 700;
+
+      color: var(--green);
+    }
+
+
+    /* =========================
+       LEARNING PATH
+    ========================== */
+
+    .path {
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+    }
+
+    .path-step {
+      padding: 20px;
+
+      background: white;
+
+      border-radius: 18px;
+
+      text-align: center;
+
+      width: 160px;
+
+      border: 1px solid #e6e7f0;
+
+      box-shadow: 0 10px 30px rgba(30,30,80,.05);
+    }
+
+    .path-number {
+      width: 45px;
+      height: 45px;
+
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      color: white;
+
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple)
+      );
+
+      font-weight: 800;
+    }
+
+    .arrow {
+      font-size: 25px;
+
+      color: var(--purple);
+    }
+
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      padding: 70px 30px;
+
+      border-radius: 30px;
+
+      color: white;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--purple)
+        );
+
+      box-shadow:
+        0 25px 60px rgba(79,70,229,.3);
+    }
+
+    .cta h2 {
+      font-size: 40px;
+    }
+
+    .cta p {
+      margin: 12px auto 25px;
+
+      max-width: 600px;
+
+      color: #e7e7ff;
+    }
+
+    .cta button {
+      padding: 14px 25px;
+
+      border-radius: 12px;
+
+      color: var(--blue);
+
+      background: white;
+
+      font-weight: 800;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      margin-top: 80px;
+
+      padding: 50px 0 25px;
+
+      background: #111329;
+
+      color: white;
+    }
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+      gap: 40px;
+    }
+
+    footer p {
+      color: #aeb1c5;
+
+      margin-top: 15px;
+
+      font-size: 14px;
+    }
+
+    footer h4 {
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      display: block;
+
+      color: #aeb1c5;
+
+      margin-top: 8px;
+
+      font-size: 14px;
+    }
+
+    .copyright {
+      margin-top: 40px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid #292c48;
+
+      color: #777b94;
+
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:1000px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-visual {
+        min-height: 400px;
+      }
+
+      .course-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .stats {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .tech-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+    }
+
+
+    @media(max-width:650px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        width: 100%;
+      }
+
+      .code-window {
+        width: 310px;
+
+        right: 0;
+      }
+
+      .course-grid,
+      .stats,
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta h2 {
+        font-size: 30px;
+      }
+
+      .path {
+        flex-direction: column;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<nav>
+
+  <div class="container nav-container">
+
+    <div class="logo">
+
+      <div class="logo-icon">
+        LW
+      </div>
+
+      Learn With Mouli
+
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#home">Home</a>
+
+      <a href="#courses">Courses</a>
+
+      <a href="#technology">Tech</a>
+
+      <a href="#quiz">Quiz</a>
+
+      <a href="#learning-path">Learning Path</a>
+
+      <a href="#about">About</a>
+
+    </div>
+
+    <a href="#courses" class="nav-button">
+      Start Learning
+    </a>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <span class="badge">
+        🚀 Future-ready learning platform
+      </span>
+
+      <h1>
+
+        Learn Smarter.
+        <br>
+
+        <span class="gradient-text">
+          Build Your Future.
+        </span>
+
+      </h1>
+
+      <p>
+
+        Welcome to Learn With Mouli — a fun and modern learning
+        platform where technology, education and creativity come
+        together.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#courses" class="primary-btn">
+          Start Learning →
+        </a>
+
+        <a href="#quiz" class="secondary-btn">
+          Take a Quick Quiz
+        </a>
+
+      </div>
+
+      <div class="search-box">
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="🔎 What do you want to learn today?"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- TECH VISUAL -->
+
+    <div class="tech-visual">
+
+      <div class="glow"></div>
+
+      <div class="code-window">
+
+        <div class="window-top">
+
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+
+        </div>
+
+        <div class="code">
+
+          <span class="purple-code">
+            const
+          </span>
+
+          student = {
+
+          <br>
+
+          &nbsp;&nbsp;name:
+          <span class="green-code">
+            "Mouli"
+          </span>,
+
+          <br>
+
+          &nbsp;&nbsp;goal:
+          <span class="green-code">
+            "Learn"
+          </span>,
+
+          <br>
+
+          &nbsp;&nbsp;skills: [
+
+          <span class="blue-code">
+            "Python"
+          </span>,
+
+          <br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="blue-code">
+            "AI"
+          </span>,
+
+          <span class="blue-code">
+            "Web"
+          </span>
+
+          ],
+
+          <br>
+
+          &nbsp;&nbsp;future:
+          <span class="green-code">
+            "Amazing 🚀"
+          </span>
+
+          <br>
+
+          };
+
+        </div>
+
+      </div>
+
+
+      <div class="floating-card xp-card">
+
+        ⚡
+
+        <strong>
+          +250 XP
+        </strong>
+
+        <small>
+          Learning XP earned
+        </small>
+
+      </div>
+
+
+      <div class="floating-card streak-card">
+
+        🔥
+
+        <strong>
+          7 Days
+        </strong>
+
+        <small>
+          Learning streak
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     COURSES
+========================== -->
+
+<section id="courses">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Explore Popular Courses
+      </h2>
+
+      <p>
+        Learn today's most useful technology and academic skills.
+      </p>
+
+    </div>
+
+
+    <div class="course-grid">
+
+
+      <div class="course-card">
+
+        <div class="course-icon">
+          🐍
+        </div>
+
+        <h3>
+          Python Programming
+        </h3>
+
+        <p>
+          Learn Python from zero and build real programming skills.
+        </p>
+
+        <div class="course-progress">
+          <span style="width:70%"></span>
+        </div>
+
+        <button class="course-button">
+          Continue Learning →
+        </button>
+
+      </div>
+
+
+      <div class="course-card">
+
+        <div class="course-icon">
+          💻
+        </div>
+
+        <h3>
+          Computer Science
+        </h3>
+
+        <p>
+          Algorithms, data structures and computer fundamentals.
+        </p>
+
+        <div class="course-progress">
+          <span style="width:45%"></span>
+        </div>
+
+        <button class="course-button">
+          Start Course →
+        </button>
+
+      </div>
+
+
+      <div class="course-card">
+
+        <div class="course-icon">
+          🧮
+        </div>
+
+        <h3>
+          Mathematics
+        </h3>
+
+        <p>
+          Master concepts through examples and practice questions.
+        </p>
+
+        <div class="course-progress">
+          <span style="width:60%"></span>
+        </div>
+
+        <button class="course-button">
+          Continue Learning →
+        </button>
+
+      </div>
+
+
+      <div class="course-card">
+
+        <div class="course-icon">
+          ⚛️
+        </div>
+
+        <h3>
+          Physics
+        </h3>
+
+        <p>
+          Understand physics through simple real-world examples.
+        </p>
+
+        <div class="course-progress">
+          <span style="width:35%"></span>
+        </div>
+
+        <button class="course-button">
+          Start Course →
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     TECH SECTION
+========================== -->
+
+<section class="tech-section" id="technology">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Learn the Technology of Tomorrow
+      </h2>
+
+      <p style="color:#aeb1c5">
+        Turn curiosity into practical technology skills.
+      </p>
+
+    </div>
+
+
+    <div class="tech-grid">
+
+
+      <div class="tech-card">
+
+        <div class="tech-card-icon">
+          🤖
+        </div>
+
+        <h3>
+          Artificial Intelligence
+        </h3>
+
+        <p>
+          Discover AI concepts, machine learning and how intelligent
+          systems work.
+        </p>
+
+      </div>
+
+
+      <div class="tech-card">
+
+        <div class="tech-card-icon">
+          🌐
+        </div>
+
+        <h3>
+          Web Development
+        </h3>
+
+        <p>
+          Build websites using HTML, CSS and JavaScript while
+          learning modern web development.
+        </p>
+
+      </div>
+
+
+      <div class="tech-card">
+
+        <div class="tech-card-icon">
+          🧠
+        </div>
+
+        <h3>
+          Problem Solving
+        </h3>
+
+        <p>
+          Improve logical thinking and learn how programmers solve
+          challenging problems.
+        </p>
+
+      </div>
+
+
+      <div class="tech-card">
+
+        <div class="tech-card-icon">
+          📱
+        </div>
+
+        <h3>
+          App Development
+        </h3>
+
+        <p>
+          Learn how mobile applications are designed and developed.
+        </p>
+
+      </div>
+
+
+      <div class="tech-card">
+
+        <div class="tech-card-icon">
+          ☁️
+        </div>
+
+        <h3>
+          Cloud Computing
+        </h3>
+
+        <p>
+          Understand servers, cloud platforms and modern digital
+          infrastructure.
+        </p>
+
+      </div>
+
+
+      <div class="tech-card">
+
+        <div class="tech-card-icon">
+          🔐
+        </div>
+
+        <h3>
+          Cyber Security
+        </h3>
+
+        <p>
+          Learn the fundamentals of protecting applications,
+          devices and information.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Your Learning Journey
+      </h2>
+
+      <p>
+        Every lesson takes you one step closer to your goal.
+      </p>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <h3>
+          25K+
+        </h3>
+
+        <p>
+          Learners
+        </p>
+
+      </div>
+
+
+      <div class="stat">
+
+        <h3>
+          120+
+        </h3>
+
+        <p>
+          Lessons
+        </p>
+
+      </div>
+
+
+      <div class="stat">
+
+        <h3>
+          5K+
+        </h3>
+
+        <p>
+          Practice Questions
+        </p>
+
+      </div>
+
+
+      <div class="stat">
+
+        <h3>
+          4.9★
+        </h3>
+
+        <p>
+          Learning Experience
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     QUIZ
+========================== -->
+
+<section id="quiz">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        🧠 Daily Tech Challenge
+      </h2>
+
+      <p>
+        Test your knowledge and earn XP.
+      </p>
+
+    </div>
+
+
+    <div class="quiz-box">
+
+      <div>
+        Question 1 of 1
+      </div>
+
+      <div class="quiz-question">
+
+        Which language is commonly used for
+        Artificial Intelligence and Machine Learning?
+
+      </div>
+
+
+      <button
+        class="quiz-option"
+        onclick="checkAnswer(false)"
+      >
+        A. HTML
+      </button>
+
+
+      <button
+        class="quiz-option"
+        onclick="checkAnswer(true)"
+      >
+        B. Python
+      </button>
+
+
+      <button
+        class="quiz-option"
+        onclick="checkAnswer(false)"
+      >
+        C. CSS
+      </button>
+
+
+      <button
+        class="quiz-option"
+        onclick="checkAnswer(false)"
+      >
+        D. SQL
+      </button>
+
+
+      <div
+        class="quiz-result"
+        id="quizResult"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     LEARNING PATH
+========================== -->
+
+<section id="learning-path">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        🚀 Your Learning Path
+      </h2>
+
+      <p>
+        Follow a simple path from beginner to confident learner.
+      </p>
+
+    </div>
+
+
+    <div class="path">
+
+
+      <div class="path-step">
+
+        <div class="path-number">
+          1
+        </div>
+
+        <h3 style="margin-top:12px">
+          Choose Goal
+        </h3>
+
+        <p style="color:#6b7280;font-size:13px">
+          Pick what you want to learn.
+        </p>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="path-step">
+
+        <div class="path-number">
+          2
+        </div>
+
+        <h3 style="margin-top:12px">
+          Learn
+        </h3>
+
+        <p style="color:#6b7280;font-size:13px">
+          Watch simple lessons.
+        </p>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="path-step">
+
+        <div class="path-number">
+          3
+        </div>
+
+        <h3 style="margin-top:12px">
+          Practice
+        </h3>
+
+        <p style="color:#6b7280;font-size:13px">
+          Solve real questions.
+        </p>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="path-step">
+
+        <div class="path-number">
+          4
+        </div>
+
+        <h3 style="margin-top:12px">
+          Quiz
+        </h3>
+
+        <p style="color:#6b7280;font-size:13px">
+          Test your knowledge.
+        </p>
+
+      </div>
+
+
+      <div class="arrow">
+        →
+      </div>
+
+
+      <div class="path-step">
+
+        <div class="path-number">
+          5
+        </div>
+
+        <h3 style="margin-top:12px">
+          Achievement
+        </h3>
+
+        <p style="color:#6b7280;font-size:13px">
+          Earn XP and badges.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================== -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="cta">
+
+      <h2>
+        Ready to Build Your Future? 🚀
+      </h2>
+
+      <p>
+        Start learning technology, improve your academic skills,
+        practice every day and become the best version of yourself.
+      </p>
+
+      <button onclick="startLearning()">
+        Start Learning Today →
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+
+          <div class="logo-icon">
+            LW
+          </div>
+
+          Learn With Mouli
+
+        </div>
+
+        <p>
+          A modern learning platform combining education,
+          technology and creativity.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Learn
+        </h4>
+
+        <a href="#courses">
+          Courses
+        </a>
+
+        <a href="#quiz">
+          Quizzes
+        </a>
+
+        <a href="#learning-path">
+          Learning Path
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Technology
+        </h4>
+
+        <a href="#technology">
+          AI & ML
+        </a>
+
+        <a href="#technology">
+          Web Development
+        </a>
+
+        <a href="#technology">
+          Cyber Security
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Explore
+        </h4>
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#courses">
+          Start Learning
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 Learn With Mouli · Learn Smarter. Grow Faster.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+  /* QUIZ */
+
+  function checkAnswer(correct) {
+
+    const result =
+      document.getElementById("quizResult");
+
+    if (correct) {
+
+      result.innerHTML =
+        "🎉 Correct! +20 XP earned. Keep going!";
+
+    } else {
+
+      result.innerHTML =
+        "💡 Not quite! Try again and learn from the answer.";
+
+    }
+
+  }
+
+
+  /* START LEARNING */
+
+  function startLearning() {
+
+    document
+      .getElementById("courses")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+  }
+
+
+  /* SEARCH */
+
+  const searchInput =
+    document.getElementById("searchInput");
+
+  searchInput.addEventListener(
+    "keyup",
+    function() {
+
+      const value =
+        searchInput.value.toLowerCase();
+
+      const cards =
+        document.querySelectorAll(
+          ".course-card"
+        );
+
+      cards.forEach(function(card) {
+
+        const text =
+          card.innerText.toLowerCase();
+
+        if (text.includes(value)) {
+
+          card.style.display = "block";
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+    }
+  );
+
+
+  /* BUTTON ANIMATION */
+
+  document
+    .querySelectorAll("button")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          this.style.transform =
+            "scale(.97)";
+
+          setTimeout(() => {
+
+            this.style.transform =
+              "";
+
+          }, 100);
+
+        }
+      );
+
+    });
+
+</script>
+
+</body>
+</html>
